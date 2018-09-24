@@ -20,6 +20,16 @@ Installation:
 1. Download or clone this repository
 2. Upload the files to your ftp folder
 3. Create a database and import faucet.sql
+ubuntu 16.04:
+```
+mysql -u root -p
+mysql>CREATE USER 'newuser'@'localhost' IDENTIFIED BY 'password';
+mysql>CREATE DATABASE your_db;
+mysql>GRANT ALL PRIVILEGES ON your_db.* TO 'newuser'@'localhost';
+mysql>use your_db
+mysql>SET autocommit=0 ; source faucet.sql ; COMMIT ;
+```
+
 4. Open the config.php and edit all the settings within to suit your needs
 5. Create cronjob(s):
 
